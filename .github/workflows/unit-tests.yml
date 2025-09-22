@@ -1,0 +1,45 @@
+name: Run Unit test on PR
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    frontend-test:
+        name: Run Frontend Unit tests
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+            - name: Install dependencies
+              run: npm install
+              working-directory: ./frontend
+            - name: Run tests
+              run: npm test -- --watchAll=false
+              working-directory: ./frontend
+
+    backend-test:
+        name: Run Backend Unit tests
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+            - name: Install dependencies
+              run: npm install
+              working-directory: ./backend
+            - name: Run tests
+              run: npm test -- --watchAll=false
+              working-directory: ./backend

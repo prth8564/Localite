@@ -1,0 +1,23 @@
+# Node
+**/node_modules/
+**/dist/
+
+# Ignore all .env files in any directory
+**/.env
+**/.env.*
+
+# React Native
+android/
+ios/
+build/
+.expo/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Others
+coverage/
