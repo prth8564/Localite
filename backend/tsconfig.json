@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "module": "esnext",
+    "module": "node18",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "outDir": "./dist",
-    "types":["jest","node"]
+    "types":["jest","node"],
+    "moduleResolution": "nodenext"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
