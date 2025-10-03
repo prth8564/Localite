@@ -1,0 +1,23 @@
+type Place {
+  place_id: ID!
+  name: String!
+  geometry: PlaceGeometry!
+  types: [String!]!
+  vicinity: String
+  photos: [JSON]
+}
+
+type PlaceGeometry {
+  location: PlaceLocation!
+}
+
+type PlaceLocation {
+  lat: Float!
+  lng: Float!
+}
+
+type Query {
+  hangoutPlaces(lat: Float!, lng: Float!, radius: Int): [Place!]!
+}
+
+scalar JSON
